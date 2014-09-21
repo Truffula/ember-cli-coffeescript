@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-coffeescript",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Adds precompilation of CoffeeScript files and all the basic generation types to the `ember generate` command.",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,7 @@
   "dependencies": {
     "fs-extra": "^0.11.0",
     "inflection": "^1.4.0",
-    "broccoli-coffee": "~0.1.1"
+    "underscore": "^1.6.0",
+    "broccoli-coffee": "~0.1.2"
   }
 }

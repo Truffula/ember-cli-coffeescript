@@ -12,9 +12,19 @@ CoffeescriptAddon.prototype.blueprintsPath = function() {
 };
 
 CoffeescriptAddon.prototype.included = function(app) {
+  var options = app.options;
+
   this.app = app;
 
-  var plugin = new CoffeePreprocessor(this.app.options.coffeeOptions);
+  options.coffeeOptions = options.coffeeOptions || {};
+
+  // Roll the coffeelintOptions and coffeeOptions into one to pass them through.
+
+  if (options.coffeelintOptions && !options.coffeeOptions.coffeelintOptions) {
+    options.coffeeOptions.coffeelintOptions = options.coffeelintOptions;
+  }
+
+  var plugin = new CoffeePreprocessor(app.options.coffeeOptions);
 
   this.app.registry.add('js', plugin);
 };
