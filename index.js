@@ -22,6 +22,7 @@ CoffeescriptAddon.prototype.included = function(app) {
 
   if (options.coffeelintOptions && !options.coffeeOptions.coffeelintOptions) {
     options.coffeeOptions.coffeelintOptions = options.coffeelintOptions;
+    delete options.coffeelintOptions;
   }
 
   var plugin = new CoffeePreprocessor(app.options.coffeeOptions);
